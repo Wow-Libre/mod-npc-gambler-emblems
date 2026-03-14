@@ -4,10 +4,10 @@
 #include "Player.h"
 #include "Chat.h"
 
-class gamble_npc : public CreatureScript
+class gamble_npc_emblems : public CreatureScript
 {
 public:
-    gamble_npc() : CreatureScript("gamble_npc") {}
+    gamble_npc_emblems() : CreatureScript("gamble_npc_emblems") {}
 
     uint32 CostoCobre = 400000; // 40 oro
 
@@ -122,7 +122,7 @@ public:
     }
 };
 
-void AddSC_gamble_npc()
+void AddSC_gamble_npc_emblems()
 {
-    new gamble_npc();
+    new gamble_npc_emblems();
 }
