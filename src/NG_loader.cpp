@@ -1,6 +1,6 @@
-void AddNPCGamblerScripts();
+void AddSC_gamble_npc();
 
 void Addmod_npc_gamblerScripts()
 {
-    AddNPCGamblerScripts();
+    AddSC_gamble_npc();
 }
