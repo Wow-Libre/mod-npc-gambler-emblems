@@ -11,9 +11,9 @@ _This module has now being ported to AzerothCore by gtao725 (https://github.com/
 
 ### Description
 
-Npc de apuestas y gana segun los premios configurados.
+Npc de apuestas de oro y ganar emblemas, se apuesta 40 de oro y se ganan emblemas y un jacpokt
     
-
+https://youtu.be/FTVzhUw5aUs
 
 #### Additional Credits
 
