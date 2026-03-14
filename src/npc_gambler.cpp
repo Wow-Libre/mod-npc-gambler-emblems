@@ -10,7 +10,7 @@ class gamble_npc : public CreatureScript
 public:
     gamble_npc() : CreatureScript("gamble_npc") {}
 
-    uint32 CostoCobre = 400000; // 40 gold
+    uint32 CostoCobre = 400000; // 40 oro
 
     uint32 ObtenerEmblemaAleatorio()
     {
@@ -19,13 +19,13 @@ public:
         switch (roll)
         {
         case 1:
-            return 40752;
+            return 40752; // Heroism
         case 2:
-            return 40753;
+            return 40753; // Valor
         case 3:
-            return 45624;
+            return 45624; // Conquest
         case 4:
-            return 47241;
+            return 47241; // Triumph
         }
 
         return 40752;
@@ -53,7 +53,10 @@ public:
             break;
 
         case 2:
-            ChatHandler(player->GetSession()).SendNotification("|cffFFD700REGLAS DEL CASINO\n|cffFFFFFFPaga 40 de oro para tirar los dados.\nUn número alto gana premio.\nEl 100 gana el JACKPOT.");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFD700REGLAS DEL CASINO\n"
+                                                               "|cffFFFFFFPaga 40 de oro para tirar los dados.\n"
+                                                               "Un número alto gana premio.\n"
+                                                               "El 100 gana el JACKPOT.");
             CloseGossipMenuFor(player);
             break;
         }
@@ -90,7 +93,7 @@ public:
             creature->HandleEmoteCommand(EMOTE_ONESHOT_CHEER);
 
             std::string anuncio = "|cffFFD700[CASINO]|r " + player->GetName() + " ha ganado el JACKPOT!";
-            sWorld->SendServerMessage(SERVER_MSG_STRING, anuncio.c_str());
+            sWorld->SendGlobalText(anuncio.c_str(), nullptr);
 
             ChatHandler(player->GetSession()).SendNotification("|cffFFD700¡¡JACKPOT!! Has ganado el premio especial.");
 
