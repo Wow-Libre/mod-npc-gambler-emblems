@@ -3,7 +3,6 @@
 #include "ScriptedGossip.h"
 #include "Player.h"
 #include "Chat.h"
-#include "World.h"
 
 class gamble_npc : public CreatureScript
 {
@@ -14,9 +13,7 @@ public:
 
     uint32 ObtenerEmblemaAleatorio()
     {
-        uint32 roll = urand(1, 4);
-
-        switch (roll)
+        switch (urand(1, 4))
         {
         case 1:
             return 40752; // Heroism
@@ -27,7 +24,6 @@ public:
         case 4:
             return 47241; // Triumph
         }
-
         return 40752;
     }
 
@@ -93,7 +89,7 @@ public:
             creature->HandleEmoteCommand(EMOTE_ONESHOT_CHEER);
 
             std::string anuncio = "|cffFFD700[CASINO]|r " + player->GetName() + " ha ganado el JACKPOT!";
-            sWorld->SendGlobalText(anuncio.c_str(), nullptr);
+            ChatHandler(nullptr).SendWorldText(anuncio.c_str());
 
             ChatHandler(player->GetSession()).SendNotification("|cffFFD700¡¡JACKPOT!! Has ganado el premio especial.");
 
@@ -101,7 +97,7 @@ public:
             return;
         }
 
-        // PROBABILIDAD OCULTA (la casa gana más)
+        // ventaja para la casa
         if (roll >= 71)
         {
             uint32 emblema = ObtenerEmblemaAleatorio();
