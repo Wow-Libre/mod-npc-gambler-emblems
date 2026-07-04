@@ -8,7 +8,7 @@
 
 Npc de apuestas de oro y ganar emblemas, se apuesta 40 de oro y se ganan emblemas y un jacpokt
     
-https://youtu.be/FTVzhUw5aUs
+Video NPC : https://youtu.be/FTVzhUw5aUs
 <img width="957" height="786" alt="image" src="https://github.com/user-attachments/assets/6754b238-e5b3-40dc-9735-18b7d9a220af" />
 
 
